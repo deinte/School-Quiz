@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="nl" xml:lang="nl" />
+<head>
+	<title>Cordula Javascript Quiz</title>
+	<link rel="stylesheet" type="text/css" href="web/css/style.css">
+	<link href="https://fonts.googleapis.com/css?family=Raleway:200,100,400" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="web/js/javascript.js"></script>
+	<meta charset="utf-8" />
+</head>
+<body onload="Timer();">
+	<nav>
+		<section class="container">
+			<div class="logo"></div>
+			<ul>
+				<a href="#main"><li>home</li></a>
+				<a href="#Section0"><li>quiz</li></a>
+				<li id="klok" title="Resterende tijd..."><span id="timer"></span></li>
+			</ul>
+		</section>
+	</nav>
+	<header id="main">
+	<video autoplay muted loop id="filmpje">
+ 		<source src="web/typen1-1.mp4">
+  		Your browser does not support HTML5 video.
+	</video>
+	<div class="overlay"></div>
+	<h1>
+	  <span
+	     class="txt-rotate"
+	     data-period="2000"
+	     data-rotate='["Gemaakt in html, css en javascript", "Door Dante Schrauwen", "Succes met de Quiz"]'></span>
+	</h1>
+	</header>
+	<script>
+		for(var a = 0; a < totaal; a ++) {
+			document.write("<main class='main' id='Section" + a + "'><section class='container'>");
+			document.write("<h2 id='Titel" + a + "'>" + vragen[a]['0'] + "</h2>");
+			for (var b = 2; b < vragen[a].length; b ++) {
+				document.write("<span class'label'><input class='radio' type='radio' name='vraag" + a + "' value='" + vragen[a][1] + "'>");
+				document.write(vragen[a][b] + "</span>");
+			}
+			document.write("</section></main>");
+		}
+	</script>
+	<main class="main" id="SectionSubmit">
+		<section class="container">
+			<button id="button" onclick="LaatPuntenZien()">Submit</button>
+			<h3 id="punten">Je scoorde: /8</h3>
+		</section>
+	</main>
+
+</body>
+</html>
